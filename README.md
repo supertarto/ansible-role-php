@@ -8,9 +8,9 @@ Install and configure PHP with Ansible.
 None
 
 ## Tested plateforms
-* Debian 10 (Buster)
 * Debian 11 (Bullseye)
 * Debian 12 (Bookworm)
+* Debian 13 (Trixie)
 
 ## Role Variables
 List of packages instaled by the role. It's not yet possible to install php from source.
