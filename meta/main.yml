@@ -2,18 +2,18 @@
 dependencies: []
 
 galaxy_info:
+  role_name: "logrotate"
   author: "Xavier Binois"
-  description: "Install and configure PHP"
-  role_name: "php"
+  namespace: supertarto
+  description: "Install and configure PHP, for Debian, with Ansible"
   license: "GNU General Public License v3.0"
-  min_ansible_version: 2.10
+  min_ansible_version: "2.19"
 
   platforms:
-    - name: "Debian"
+    - name: Debian
       versions:
-        - buster
-        - bullseye
         - bookworm
+        - trixie
 
   galaxy_tags:
     - "webserver"

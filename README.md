@@ -1,11 +1,13 @@
 # Ansible PHP
 [![CI](https://github.com/supertarto/ansible-php/actions/workflows/ci.yml/badge.svg)](https://github.com/supertarto/ansible-php/actions/workflows/ci.yml)
 
-Install and configure PHP with Ansible.
+[![CI](https://github.com/supertarto/ansible-role-php/actions/workflows/ci.yml/badge.svg)](https://github.com/supertarto/ansible-role-php/actions/workflows/ci.yml)
+
+Install and configure PHP, for Debian, with Ansible. Tested with Apache. 
 
 ## Requirements
 
-None
+A web server (Apache, Nginx). Tested only with Apache. You can use supertarto.apache
 
 ## Tested plateforms
 * Debian 11 (Bullseye)
@@ -13,6 +15,7 @@ None
 * Debian 13 (Trixie)
 
 ## Role Variables
+
 List of packages instaled by the role. It's not yet possible to install php from source.
 ```yaml
 php_packages:
@@ -24,17 +27,6 @@ Name of the webserver daemon used by PHP. For example, apache2, httpd, nginx... 
 ```yaml
 php_webserver_daemon: "apache2"
 ```
-## Examples
-```yml
----
-- hosts: somehost
-  roles:
-    - supertarto.php
-```
 
-## Installation
-```
-ansible-galaxy role install supertarto.php
-```
 ## License
 GPL V3.0

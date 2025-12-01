@@ -1,25 +1,25 @@
 ---
 - name: Include distribution and version-specific vars.
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - files:
         - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
       skip: true
 
 - name: Set the default PHP version.
-  set_fact:
+  ansible.builtin.set_fact:
     php_default_version_debian: "{{ __php_default_version_debian }}"
   when: php_default_version_debian is not defined and ansible_os_family == 'Debian'
 
 - name: Install PHP packages
-  package:
+  ansible.builtin.package:
     name: "{{ item }}"
     state: present
-  with_items: "{{ php_packages }}"
+  loop: "{{ php_packages }}"
   notify: Restart Webserver
 
-- name: cron task to remove MAILTO
-  lineinfile:
+- name: Cron task to remove MAILTO
+  ansible.builtin.lineinfile:
     dest: "/etc/cron.d/php"
     line: "MAILTO=\"\""
     state: present

@@ -1,5 +1,5 @@
 ---
 - name: Restart Webserver
-  service:
+  ansible.builtin.service:
     name: "{{ php_webserver_daemon }}"
     state: restarted

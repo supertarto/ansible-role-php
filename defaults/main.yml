@@ -1,4 +1,12 @@
 ---
 php_packages: []
+# Exemple for Debian 12
+#  - php8.2
+#  - php8.2-mysql
+#  - php8.2-pdo
+#  - php8.2-xml
+#  - php8.2-imagick
+#  - php8.2-gd
+#  - php8.2-mbstring
 
 php_webserver_daemon: "apache2"

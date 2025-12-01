@@ -20,6 +20,14 @@ jobs:
         with:
           path: 'supertarto.php'
 
+      - name: Set up Python 3.
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install Ansible.
+        run: pip3 install ansible-core
+
       - name: Trigger a new import on Galaxy.
         run: >-
           ansible-galaxy role import --api-key ${{ secrets.GALAXY_API_KEY }}
