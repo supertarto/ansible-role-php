@@ -1,7 +1,6 @@
 # Ansible PHP
-[![CI](https://github.com/supertarto/ansible-php/actions/workflows/ci.yml/badge.svg)](https://github.com/supertarto/ansible-php/actions/workflows/ci.yml)
-
 [![CI](https://github.com/supertarto/ansible-role-php/actions/workflows/ci.yml/badge.svg)](https://github.com/supertarto/ansible-role-php/actions/workflows/ci.yml)
+
 
 Install and configure PHP, for Debian, with Ansible. Tested with Apache. 
 
