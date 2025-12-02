@@ -1,2 +1,3 @@
 ---
 __php_default_version_debian: "7.4"
+__php_conf_paths: "/etc/php/{{ php_default_version_debian }}/apache2/conf.d"

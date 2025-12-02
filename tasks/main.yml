@@ -11,12 +11,28 @@
     php_default_version_debian: "{{ __php_default_version_debian }}"
   when: php_default_version_debian is not defined and ansible_os_family == 'Debian'
 
+- name: Set PHP conf path
+  ansible.builtin.set_fact:
+    php_conf_paths: "{{ __php_conf_paths }}"
+  when: php_default_version_debian is not defined and ansible_os_family == 'Debian'
+
 - name: Install PHP packages
   ansible.builtin.package:
     name: "{{ item }}"
     state: present
   loop: "{{ php_packages }}"
   notify: Restart Webserver
+
+- name: Place PHP configuration file in place.
+  ansible.builtin.template:
+    src: php.ini.j2
+    dest: "{{ php_conf_paths }}/php.ini"
+    owner: root
+    group: root
+    mode: "0644"
+  with_items: "{{ php_conf_paths }}"
+  notify: restart webserver
+  when: php_use_managed_ini
 
 - name: Cron task to remove MAILTO
   ansible.builtin.lineinfile:
