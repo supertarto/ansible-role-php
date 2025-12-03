@@ -1,4 +1,4 @@
-# Ansible PHP
+# Ansible Role PHP
 [![CI](https://github.com/supertarto/ansible-role-php/actions/workflows/ci.yml/badge.svg)](https://github.com/supertarto/ansible-role-php/actions/workflows/ci.yml)
 
 
