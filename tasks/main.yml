@@ -9,12 +9,12 @@
 - name: Set the default PHP version.
   ansible.builtin.set_fact:
     php_default_version_debian: "{{ __php_default_version_debian }}"
-  when: php_default_version_debian is not defined and ansible_os_family == 'Debian'
+  when: php_default_version_debian is not defined and ansible_facts['ansible_os_family'] == 'Debian'
 
 - name: Set PHP conf path
   ansible.builtin.set_fact:
     php_conf_paths: "{{ __php_conf_paths }}"
-  when: php_default_version_debian is not defined and ansible_os_family == 'Debian'
+  when: php_conf_paths is not defined and ansible_facts['ansible_os_family'] == 'Debian'
 
 - name: Install PHP packages
   ansible.builtin.package:
