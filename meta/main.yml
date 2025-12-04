@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  role_name: "logrotate"
+  role_name: "php"
   author: "Xavier Binois"
   namespace: supertarto
   description: "Install and configure PHP, for Debian, with Ansible"
