@@ -21,7 +21,6 @@ php_packages:
   - "php{{php_default_version_debian}}"
 ```
 The default version value is defined in the vars folder, based on the Debian version.
-
 Name of the webserver daemon used by PHP. For example, apache2, httpd, nginx... Needed.
 ```yaml
 php_webserver_daemon: "apache2"
